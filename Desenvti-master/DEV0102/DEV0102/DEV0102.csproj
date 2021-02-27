@@ -75,6 +75,7 @@
   <ItemGroup>
     <Content Include="cadUsuario.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="HOME.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -99,6 +100,13 @@
     <Compile Include="DAL\usuarioDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HOME.aspx.cs">
+      <DependentUpon>HOME.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HOME.aspx.designer.cs">
+      <DependentUpon>HOME.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

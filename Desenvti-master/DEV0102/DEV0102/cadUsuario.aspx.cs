@@ -14,7 +14,18 @@ namespace DEV0102
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.ServerVariables["QUERY_STRING"].Contains("Cadastro"))
+            {
+                panelUsuariosCadastrados.Visible = false; 
+            }
+            else if (Session["codigoUsuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                panelUsuariosCadastrados.Visible = true;
+            }
         }
 
         protected void btnConsultaCEP_Click(object sender, EventArgs e)
@@ -167,6 +178,31 @@ namespace DEV0102
         protected void gridUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void EnviarEmail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<tabUsuario> objlst = new List<tabUsuario>();
+                usuarioDAL udal = new usuarioDAL();
+                objlst = udal.listarTodosUsuarios();
+                foreach (tabUsuario item in objlst)
+                {
+                    Suporte sup = new Suporte();
+                    sup.EnviarEmail("Parabens", item.email, "Parabens," + item.nome + "Desejamos um feliz Aniversário,DesenvTI deseja muitas realizações");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HOME.aspx");
         }
     }
 }

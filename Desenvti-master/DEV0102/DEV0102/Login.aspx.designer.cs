@@ -51,6 +51,15 @@ namespace DEV0102
         protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
+        /// Controle btnCadastroUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastroUsuario;
+
+        /// <summary>
         /// Controle btnEsqueciSenha.
         /// </summary>
         /// <remarks>
